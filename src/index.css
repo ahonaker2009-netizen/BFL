@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #0d2136;
+  --color-navy2: #153450;
+  --color-navy3: #1d4462;
+  --color-orange: #e8823a;
+  --color-orange2: #d4602a;
+  --color-sand: #f2e8d5;
+  --color-cream: #faf6ee;
+  --color-teal: #2c7a8c;
+  --color-teal-light: #6db8c7;
+  --color-ink: #0d2136;
+  --font-anton: 'Anton', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+:root {
+  --navy: #0d2136;
+  --navy2: #153450;
+  --navy3: #1d4462;
+  --orange: #e8823a;
+  --orange2: #d4602a;
+  --sand: #f2e8d5;
+  --cream: #faf6ee;
+  --teal: #2c7a8c;
+  --teal-light: #6db8c7;
+  --ink: #0d2136;
+  --line: rgba(13,33,54,0.12);
+  --shadow: 0 10px 30px rgba(13,33,54,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+button { font-family: inherit; cursor: pointer; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(13,33,54,0.2); border-radius: 3px; }
+
+/* Game card RSVP / status badges */
+.rsvp-yes { background: #d1fae5; color: #065f46; }
+.rsvp-no  { background: #fee2e2; color: #991b1b; }
+.rsvp-pending { background: var(--sand); color: var(--navy); }
+
+/* Drag states */
+.dragging { opacity: 0.4; }
+.drop-target { outline: 2px dashed var(--orange); outline-offset: 2px; }
+
+/* Standings table */
+.standings-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.standings-table th { text-align: left; padding: 10px 12px; background: var(--navy); color: var(--sand); font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+.standings-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.standings-table tbody tr:hover { background: rgba(13,33,54,0.04); }
+.standings-table tbody tr:last-child td { border-bottom: none; }
+
+/* Touch-friendly forms — no iOS zoom */
+@media (max-width: 768px) {
+  input, select, textarea { font-size: 16px !important; }
+  .nav-compact { padding: 10px 16px; }
+}
